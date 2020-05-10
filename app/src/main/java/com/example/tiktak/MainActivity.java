@@ -143,6 +143,6 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.super.onBackPressed();
         }}).setNegativeButton("Cancel",null).setCancelable(false);
         AlertDialog finish=exit.create();
-        finish.show();
+        finish.show();//hay
     }
 }
