@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Player currentPlayer = Player.One;
     private Player[] nowPlaying = new Player[9];
     private int[][] winner = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 4, 8},
-            {2, 4, 6}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}}; // this all are the winning conditions
+            {2, 4, 6}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,40 +45,40 @@ public class MainActivity extends AppCompatActivity {
         tabimage = (ImageView) imageview;
         int tagValue = Integer.parseInt(tabimage.getTag().toString());
 
-        if (nowPlaying[tagValue] == null) {   // this condition stop image view to assign another image if there is already image inside it.
-            nowPlaying[tagValue] = currentPlayer; // this tell which player is playing now
+        if (nowPlaying[tagValue] == null) {
+            nowPlaying[tagValue] = currentPlayer;
             if (currentPlayer == Player.One) {
-                tabimage.setImageResource(R.drawable.x); // here we assigning the X image in every ImageView when it clicks by the player.
+                tabimage.setImageResource(R.drawable.x);
                 currentPlayer = Player.Two;
             } else if (currentPlayer == Player.Two) {
-                tabimage.setImageResource(R.drawable.zero); // here we assigning the O image in every image ImageView it clicks by the player.
+                tabimage.setImageResource(R.drawable.zero);
                 currentPlayer = Player.One;
             }
         }
-        for (int[] test : winner){  // here we extract single dimensional array from two dimensional array.
+        for (int[] test : winner){
             if (nowPlaying[test[0]] == nowPlaying[test[1]] &&
                     nowPlaying[test[1]] == nowPlaying[test[2]] &&
                     nowPlaying[test[2]] == Player.One &&
-                    nowPlaying[test[2]] != null) { // this condition only be true if player One wins
+                    nowPlaying[test[2]] != null) {
                 winnerOfGame = "Player One win";
                 One = true;
                 gameWinner=true;
-                playerOne++;  // this is a score teller. Mean how many time player one wins.
+                playerOne++;
                 scoreOne.setText(playerOne + "");
 
 
             } else if (nowPlaying[test[0]] == nowPlaying[test[1]] &&
                     nowPlaying[test[1]] == nowPlaying[test[2]] &&
                     nowPlaying[test[2]] == Player.Two &&
-                    nowPlaying[test[1]] != null) { //this condition only be true if player Two wins
+                    nowPlaying[test[1]] != null) {
                 winnerOfGame = "Player Two win";
                 Two = true;
                 gameWinner=true;
-                playerTwo++; // this is a score teller. Mean how many times player two wins.
+                playerTwo++;
                 scoreTwo.setText(playerTwo + "");
             }
             if (One == true) {
-                restart();  //this function restart or exit the game according to user choice after any of one player wins.
+                restart();
                 One = false;
             } else if (Two == true) {
                 restart();
