@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (nowPlaying[0] != null && nowPlaying[1] != null && nowPlaying[2] != null &&
                 nowPlaying[3] != null && nowPlaying[4] != null && nowPlaying[5] != null && nowPlaying[6] != null &&
-                nowPlaying[7] != null && nowPlaying[8] != null&&gameWinner==false&&gameWinner==false) {
+                nowPlaying[7] != null && nowPlaying[8] != null&&gameWinner) {
             AlertDialog.Builder draw=new AlertDialog.Builder(MainActivity.this);
             draw.setMessage("Match is Draw").setPositiveButton("Play again", new DialogInterface.OnClickListener() {
                 @Override
@@ -143,6 +143,6 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.super.onBackPressed();
         }}).setNegativeButton("Cancel",null).setCancelable(false);
         AlertDialog finish=exit.create();
-        finish.show();//hay
+        finish.show();
     }
 }
