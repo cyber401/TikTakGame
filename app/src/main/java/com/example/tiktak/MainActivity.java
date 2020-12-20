@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 playerTwo++;
                 scoreTwo.setText(playerTwo + "");
             }
-            if (One == true) {
+            if (One) {
                 restart();
                 One = false;
-            } else if (Two == true) {
+            } else if (Two) {
                 restart();
                 Two = false;
             }
